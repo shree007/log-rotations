@@ -25,10 +25,15 @@ put following lines in logrotate.conf
 
 
 $HOME/path/to/logs-directory/*.log {
+
 	  daily
+	  
 	  missingok
+	  
 	  rotate 4
+	  
 	  compress
+	  
 	  create
 }
 
