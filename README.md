@@ -6,7 +6,7 @@ Why we need log rotations?
 Before diving into log rotations I would like to coin following questions
 
 Have you ever face that your production application machine got stuck suddenly with this error "there is no disk space"?
-Have you ever face that your mongodb instance disk has been filled due to error floodm?
+Have you ever face that your mongodb instance disk has been filled due to error floods?
 Have you ever experiennced that you are trying to complete command in linux cmd using tab button and it's showing there is no disk space?
 
 So, Here log rotations come in picture to save from error "No Disk Space"
