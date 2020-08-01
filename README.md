@@ -19,11 +19,13 @@ In logrotate-state let you know last log rotation time and which files has been 
 
 
 #create logrotate.conf file
+```bash
 $ touch logrotate.conf
+```
 
 put following lines in logrotate.conf
 
-
+```text
 $HOME/path/to/logs-directory/*.log {
 
 	  daily
@@ -36,18 +38,21 @@ $HOME/path/to/logs-directory/*.log {
 	  
 	  create
 }
+```
 
+Create a empty file `logrotate-state` and leave it blank
+```bash
 $ touch logrotate-state
-
-leave logrotate-state blank
+```
 
 Run following command  
+```bash
 $/usr/bin/logrotate   logrotate.conf --state logrotate-state
-
+```
 If you check logrotate-state you will get info regrading on which files log rotation will be applied.
 
 Now we will put it into cronjob to run this command on every 6 hour so that log rotations will be applied.
-
+```console
 $ crontab -e 
-
-0 */6 * * *  /usr/bin/logrotate   $HOME/path/to/logrotate.conf --state $HOME/path/tologrotate-state
+0 */6 * * *  /usr/bin/logrotate   $HOME/path/to/logrotate.conf --state $HOME/path/logrotate-state
+```
